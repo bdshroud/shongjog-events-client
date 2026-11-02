@@ -7,7 +7,7 @@
 
 **(Client URL)**
 
-**Live Server URL:** [https://shongjog-events-server.vercel.app/] (https://shongjog-events-server.vercel.app/) *
+**Live Server URL:** [https://shongjog-events-server.vercel.app/](https://shongjog-events-server.vercel.app/) *
 
 **(server URL)**
 
