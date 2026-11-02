@@ -3,7 +3,13 @@
 > **Connecting Changemakers Across Bangladesh**  
 > Empowering grassroots community development, winter relief drives, tree plantations, coastal cleanups, and emergency healthcare camps with an Evenjo-inspired modern event architecture.
 
-**Live Deployment URL:** [https://shongjog-events-client.vercel.app](https://shongjog-events-client.vercel.app) *(Production Deployment Placeholder)*
+**Live Deployment URL:** [https://shongjog-events-client.vercel.app](https://shongjog-events-client.vercel.app) *
+
+**(Client URL)**
+
+**Live Server URL:** [https://shongjog-events-server.vercel.app/] (https://shongjog-events-server.vercel.app/) *
+
+**(server URL)**
 
 ---
 
