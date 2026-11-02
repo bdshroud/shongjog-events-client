@@ -1,9 +1,8 @@
 "use client";
 
 import * as React from "react";
-import axios from "axios";
 import { authClient } from "@/lib/auth-client";
-import { API_BASE_URL } from "@/lib/axios";
+import api, { API_BASE_URL } from "@/lib/axios";
 
 interface AuthSyncContextType {
   isPending: boolean;
@@ -35,7 +34,7 @@ export function JwtSyncProvider({ children }: { children: React.ReactNode }) {
     }
 
     try {
-      const response = await axios.post(`${API_BASE_URL}/api/jwt`, {
+      const response = await api.post("/api/jwt", {
         email: session.user.email,
         name: session.user.name || session.user.email.split("@")[0],
         image: session.user.image,

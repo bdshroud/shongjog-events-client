@@ -104,13 +104,13 @@ function LoginForm() {
         provider: "google",
         callbackURL:
           typeof window !== "undefined"
-            ? window.location.origin + callbackUrl
+            ? `${window.location.origin}${callbackUrl.startsWith("/") ? callbackUrl : `/${callbackUrl}`}`
             : "/",
       });
     } catch (error: any) {
       console.error("[Google OAuth Error]", error);
       toast.error(
-        "Google sign-in could not be initiated. Please use email & password."
+        error?.message || "Google sign-in could not be initiated. Please check your connection."
       );
       setIsGoogleLoading(false);
     }
