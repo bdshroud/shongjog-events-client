@@ -71,6 +71,10 @@ function RegisterForm() {
           typeof window !== "undefined"
             ? `${window.location.origin}/upcoming-events`
             : "/",
+        errorCallbackURL:
+          typeof window !== "undefined"
+            ? `${window.location.origin}/register`
+            : "/register",
       });
     } catch (error: any) {
       console.error("[Google OAuth Error]", error);

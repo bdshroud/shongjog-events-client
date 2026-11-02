@@ -30,10 +30,21 @@ function LoginForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const callbackUrl = searchParams.get("callbackUrl") || "/upcoming-events";
+  const errorParam = searchParams.get("error");
   const { session, refetchJwt } = useAuthSync();
 
   const [isLoading, setIsLoading] = React.useState(false);
   const [isGoogleLoading, setIsGoogleLoading] = React.useState(false);
+
+  React.useEffect(() => {
+    if (errorParam) {
+      if (errorParam === "state_mismatch") {
+        toast.error("Google sign-in session expired or was blocked. Please try again.");
+      } else {
+        toast.error(`Authentication error: ${errorParam}`);
+      }
+    }
+  }, [errorParam]);
 
   // If already logged in, redirect
   React.useEffect(() => {
@@ -106,6 +117,10 @@ function LoginForm() {
           typeof window !== "undefined"
             ? `${window.location.origin}${callbackUrl.startsWith("/") ? callbackUrl : `/${callbackUrl}`}`
             : "/",
+        errorCallbackURL:
+          typeof window !== "undefined"
+            ? `${window.location.origin}/login`
+            : "/login",
       });
     } catch (error: any) {
       console.error("[Google OAuth Error]", error);
