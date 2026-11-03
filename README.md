@@ -61,3 +61,10 @@ Visit [http://localhost:3000](http://localhost:3000) in your browser.
 npm run build
 npm run start
 ```
+
+
+### Client Architecture Summary
+- **Framework**: Next.js 15 App Router with React 19 & Tailwind CSS
+- **State & Forms**: React Hook Form with Zod validation schemas
+- **Theming**: Next-Themes nocturnal dark/light mode engine
+- **Network**: Axios client with automated Bearer token injection
