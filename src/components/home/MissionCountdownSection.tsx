@@ -5,6 +5,10 @@ import Link from "next/link";
 import { ArrowRight, Sparkles, MapPin, Heart, Users2, ShieldCheck, Clock } from "lucide-react";
 import { api } from "@/lib/axios";
 
+/**
+ * Mission Countdown Section
+ * Live ticking four-box timer counting down to the next upcoming community drive.
+ */
 export function MissionCountdownSection() {
   const [targetDate, setTargetDate] = React.useState<Date>(
     new Date(Date.now() + 3 * 24 * 60 * 60 * 1000 + 4 * 60 * 60 * 1000)
