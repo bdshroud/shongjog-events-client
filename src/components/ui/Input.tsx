@@ -8,6 +8,10 @@ export interface InputProps
   helperText?: string;
 }
 
+/**
+ * Form Input Primitive
+ * Supports floating labels, validation error styling, and forwardRef binding.
+ */
 export const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, type = "text", label, error, helperText, id, ...props }, ref) => {
     const inputId = id || (label ? label.toLowerCase().replace(/\s+/g, "-") : undefined);
