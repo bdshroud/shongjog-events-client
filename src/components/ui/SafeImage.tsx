@@ -34,6 +34,10 @@ export interface SafeImageProps
   category?: string;
 }
 
+/**
+ * SafeImage Component
+ * Guarantees zero broken images across Next.js SSR hydration and prevents alt text overlap.
+ */
 export function SafeImage({
   src,
   alt = "",
