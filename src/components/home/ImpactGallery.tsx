@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Sparkles, MapPin, Heart } from "lucide-react";
 import Link from "next/link";
+import { SafeImage } from "@/components/ui/SafeImage";
 
 interface GalleryBlock {
   title: string;
@@ -22,7 +23,7 @@ const galleryPhotos: GalleryBlock[] = [
     location: "Geneva Camp, Dhaka",
     category: "Blanket Drive",
     imageUrl:
-      "https://images.unsplash.com/photo-1532629345422-7515f3d16bb0?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=800&q=80",
   },
   {
     title: "Patenga Sea Beach Plastic Cleanup",
@@ -81,10 +82,10 @@ export function ImpactGallery() {
         <div className="mt-14 grid grid-cols-2 lg:grid-cols-4 gap-4">
           {/* Photo 1 */}
           <div className="relative aspect-square rounded-3xl overflow-hidden group shadow-sm bg-slate-200 dark:bg-[#130E24] border border-purple-900/20">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <SafeImage
               src={galleryPhotos[0].imageUrl}
               alt={galleryPhotos[0].title}
+              category={galleryPhotos[0].category}
               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0A0612]/90 via-transparent to-transparent opacity-90 p-4 flex flex-col justify-end text-left">
@@ -99,10 +100,10 @@ export function ImpactGallery() {
 
           {/* Photo 2 */}
           <div className="relative aspect-square rounded-3xl overflow-hidden group shadow-sm bg-slate-200 dark:bg-[#130E24] border border-purple-900/20">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <SafeImage
               src={galleryPhotos[1].imageUrl}
               alt={galleryPhotos[1].title}
+              category={galleryPhotos[1].category}
               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0A0612]/90 via-transparent to-transparent opacity-90 p-4 flex flex-col justify-end text-left">
@@ -117,10 +118,10 @@ export function ImpactGallery() {
 
           {/* Photo 3 */}
           <div className="relative aspect-square rounded-3xl overflow-hidden group shadow-sm bg-slate-200 dark:bg-[#130E24] border border-purple-900/20">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <SafeImage
               src={galleryPhotos[2].imageUrl}
               alt={galleryPhotos[2].title}
+              category={galleryPhotos[2].category}
               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0A0612]/90 via-transparent to-transparent opacity-90 p-4 flex flex-col justify-end text-left">
@@ -135,10 +136,10 @@ export function ImpactGallery() {
 
           {/* Photo 4 */}
           <div className="relative aspect-square rounded-3xl overflow-hidden group shadow-sm bg-slate-200 dark:bg-[#130E24] border border-purple-900/20">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <SafeImage
               src={galleryPhotos[3].imageUrl}
               alt={galleryPhotos[3].title}
+              category={galleryPhotos[3].category}
               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0A0612]/90 via-transparent to-transparent opacity-90 p-4 flex flex-col justify-end text-left">
@@ -177,10 +178,10 @@ export function ImpactGallery() {
 
           {/* Photo 6 */}
           <div className="relative aspect-square rounded-3xl overflow-hidden group shadow-sm bg-slate-200 dark:bg-[#130E24] border border-purple-900/20">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <SafeImage
               src={galleryPhotos[4].imageUrl}
               alt={galleryPhotos[4].title}
+              category={galleryPhotos[4].category}
               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0A0612]/90 via-transparent to-transparent opacity-90 p-4 flex flex-col justify-end text-left">
@@ -195,10 +196,10 @@ export function ImpactGallery() {
 
           {/* Photo 7 */}
           <div className="relative aspect-square rounded-3xl overflow-hidden group shadow-sm bg-slate-200 dark:bg-[#130E24] border border-purple-900/20">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <SafeImage
               src={galleryPhotos[5].imageUrl}
               alt={galleryPhotos[5].title}
+              category={galleryPhotos[5].category}
               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0A0612]/90 via-transparent to-transparent opacity-90 p-4 flex flex-col justify-end text-left">
@@ -213,10 +214,10 @@ export function ImpactGallery() {
 
           {/* Photo 8 */}
           <div className="relative aspect-square rounded-3xl overflow-hidden group shadow-sm bg-slate-200 dark:bg-[#130E24] border border-purple-900/20">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <SafeImage
               src={galleryPhotos[6].imageUrl}
               alt={galleryPhotos[6].title}
+              category={galleryPhotos[6].category}
               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0A0612]/90 via-transparent to-transparent opacity-90 p-4 flex flex-col justify-end text-left">

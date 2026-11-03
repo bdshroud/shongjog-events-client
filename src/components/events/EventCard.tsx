@@ -3,6 +3,7 @@ import Link from "next/link";
 import { MapPin, Calendar, ArrowRight } from "lucide-react";
 import { IEvent } from "@/types";
 import { Badge } from "@/components/ui/Badge";
+import { SafeImage } from "@/components/ui/SafeImage";
 import { formatDate } from "@/lib/utils";
 
 interface EventCardProps {
@@ -17,10 +18,10 @@ export function EventCard({ event }: EventCardProps) {
       <div>
         {/* Uniform Aspect-[16/10] Image Header (Strict Rubric Rule) */}
         <div className="relative w-full aspect-[16/10] overflow-hidden bg-slate-100 dark:bg-[#1A1330]">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <SafeImage
             src={event.thumbnailUrl}
             alt={event.title}
+            category={event.eventType}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             loading="lazy"
           />

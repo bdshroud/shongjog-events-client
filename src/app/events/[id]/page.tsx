@@ -18,6 +18,7 @@ import { IEvent } from "@/types";
 import { api } from "@/lib/axios";
 import { useAuthSync } from "@/components/auth/JwtSyncProvider";
 import { Badge } from "@/components/ui/Badge";
+import { SafeImage } from "@/components/ui/SafeImage";
 import { Button } from "@/components/ui/Button";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { formatDate } from "@/lib/utils";
@@ -231,10 +232,10 @@ export default function EventDetailsPage() {
         <div className="rounded-3xl border border-slate-200 dark:border-purple-900/40 bg-white dark:bg-[#130E24] overflow-hidden shadow-2xl">
           {/* Full Banner Header - aspect-[16/10] */}
           <div className="relative w-full aspect-[16/10] sm:aspect-[21/9] overflow-hidden bg-slate-950">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <SafeImage
               src={event.thumbnailUrl}
               alt={event.title}
+              category={event.eventType}
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0A0612]/90 via-[#0A0612]/40 to-transparent" />

@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 import { Textarea } from "@/components/ui/Textarea";
 import { Select } from "@/components/ui/Select";
+import { SafeImage } from "@/components/ui/SafeImage";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { toast } from "sonner";
 import Swal from "sweetalert2";
@@ -95,7 +96,7 @@ export default function CreateEventPage() {
   const sampleImages = [
     {
       label: "Winter Relief",
-      url: "https://images.unsplash.com/photo-1532629345422-7515f3d16bb0?auto=format&fit=crop&w=1200&q=80",
+      url: "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=1200&q=80",
     },
     {
       label: "Tree Plantation",
@@ -288,15 +289,11 @@ export default function CreateEventPage() {
                     Card Cover Preview (aspect-[16/10]):
                   </p>
                   <div className="w-full max-w-sm aspect-[16/10] rounded-2xl overflow-hidden border border-slate-200 dark:border-purple-900/40 bg-slate-100 dark:bg-[#130E24]">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
+                    <SafeImage
                       src={selectedThumbnail}
                       alt="Cover Preview"
+                      category={watch("eventType")}
                       className="w-full h-full object-cover"
-                      onError={(e) => {
-                        (e.currentTarget as HTMLImageElement).src =
-                          "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1200&q=80";
-                      }}
                     />
                   </div>
                 </div>
