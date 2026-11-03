@@ -1,3 +1,7 @@
+/**
+ * Authenticated HTTP Client
+ * Configured Axios instance attaching JWT bearer tokens from client-side storage.
+ */
 import axios from "axios";
 
 const getApiBaseUrl = () => {
