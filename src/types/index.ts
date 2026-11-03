@@ -1,3 +1,7 @@
+/**
+ * Client Domain Types
+ * Shared interfaces representing events, volunteer registrations, and user credentials.
+ */
 export type EventCategory =
   | "Cleanup"
   | "Plantation"
