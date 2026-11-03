@@ -8,12 +8,20 @@ import { Toaster } from "sonner";
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
   title: "ShongjogBD | Social Development Events Platform",
   description:
     "Empowering grassroots community development, winter relief drives, tree plantations, and beach cleanups across Bangladesh.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({
