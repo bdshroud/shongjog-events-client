@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-// @ts-expect-error CSS is handled by Next.js and has no TypeScript module declaration.
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import { JwtSyncProvider } from "@/components/auth/JwtSyncProvider";
