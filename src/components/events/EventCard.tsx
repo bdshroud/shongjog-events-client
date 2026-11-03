@@ -10,6 +10,10 @@ interface EventCardProps {
   event: IEvent;
 }
 
+/**
+ * Community Event Card
+ * Enforces strict uniform 16:10 aspect ratio and displays floating category badges.
+ */
 export function EventCard({ event }: EventCardProps) {
   const participantCount = event.participantCount ?? 0;
 
