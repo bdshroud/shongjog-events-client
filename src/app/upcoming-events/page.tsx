@@ -21,6 +21,10 @@ const categories = [
   "Donation",
 ];
 
+/**
+ * Upcoming Events Directory Page
+ * Provides debounced full-text search, category pill toggles, and responsive card grid.
+ */
 function UpcomingEventsContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
