@@ -18,6 +18,10 @@ import { CardSkeletonGrid } from "@/components/ui/EventSkeleton";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { formatDate } from "@/lib/utils";
 
+/**
+ * Volunteer Commitment Roster
+ * Displays all community events registered by the authenticated user in chronological order.
+ */
 export default function JoinedEventsPage() {
   const [joinedList, setJoinedList] = React.useState<IJoinedEvent[]>([]);
   const [isLoading, setIsLoading] = React.useState(true);
