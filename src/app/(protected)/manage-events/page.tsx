@@ -78,6 +78,10 @@ const updateEventSchema = z.object({
 
 type UpdateEventFormValues = z.infer<typeof updateEventSchema>;
 
+/**
+ * Organizer Management Dashboard
+ * Allows event creators to inspect, edit, and delete their organized initiatives.
+ */
 export default function ManageEventsPage() {
   const [myEvents, setMyEvents] = React.useState<IEvent[]>([]);
   const [isLoading, setIsLoading] = React.useState(true);
