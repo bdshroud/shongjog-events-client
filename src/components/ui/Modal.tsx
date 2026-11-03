@@ -13,6 +13,10 @@ export interface ModalProps {
   className?: string;
 }
 
+/**
+ * Accessible Dialog Modal
+ * Locks background scroll and captures Escape key shortcuts for dismissal.
+ */
 export function Modal({
   isOpen,
   onClose,
