@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useForm } from "react-hook-form";
+import { useForm, type FieldErrors } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { authClient } from "@/lib/auth-client";
@@ -26,12 +26,20 @@ const registerSchema = z
       .trim()
       .email("A valid email address is required"),
     photoURL: z
-      .string()
+      .string({ required_error: "Profile photo URL is required" })
       .trim()
-      .optional()
+      .min(1, "Profile photo URL is required")
       .refine(
-        (val) => !val || /^https?:\/\/.+/.test(val),
-        "Photo URL must be a valid http or https web link"
+        (val) => {
+          if (!/^https?:\/\/.+/i.test(val)) return false;
+          try {
+            const url = new URL(val);
+            return url.protocol === "http:" || url.protocol === "https:";
+          } catch {
+            return false;
+          }
+        },
+        "Profile photo URL must be a valid link starting with http:// or https://"
       ),
     password: z
       .string({ required_error: "Password is required" })
@@ -106,14 +114,29 @@ function RegisterForm() {
   const hasUpper = /[A-Z]/.test(watchedPassword);
   const hasLower = /[a-z]/.test(watchedPassword);
 
+  const onInvalid = (formErrors: FieldErrors<RegisterFormValues>) => {
+    if (formErrors.photoURL?.message) {
+      toast.error(formErrors.photoURL.message as string);
+    } else {
+      const firstError = Object.values(formErrors)[0];
+      if (firstError?.message) {
+        toast.error(firstError.message as string);
+      }
+    }
+  };
+
   const onSubmit = async (values: RegisterFormValues) => {
+    const photoUrl = values.photoURL?.trim();
+    if (!photoUrl || !/^https?:\/\/.+/i.test(photoUrl)) {
+      toast.error(
+        "Profile photo URL is required and must start with http:// or https://"
+      );
+      return;
+    }
+
     setIsLoading(true);
     try {
-      const defaultAvatar = `https://api.dicebear.com/7.x/initials/svg?seed=${encodeURIComponent(
-        values.name
-      )}&backgroundColor=B845EC`;
-
-      const finalImage = values.photoURL?.trim() || defaultAvatar;
+      const finalImage = photoUrl;
 
       const response = await authClient.signUp.email({
         name: values.name.trim(),
@@ -219,7 +242,11 @@ function RegisterForm() {
         </span>
       </div>
 
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+      <form
+        noValidate
+        onSubmit={handleSubmit(onSubmit, onInvalid)}
+        className="space-y-4"
+      >
         <Input
           label="Full Name"
           placeholder="e.g. Tanzimul Islam"
@@ -236,12 +263,32 @@ function RegisterForm() {
         />
 
         <Input
-          label="Profile Photo URL (Optional)"
+          label="Profile Photo URL"
           type="url"
           placeholder="https://images.unsplash.com/..."
-          helperText="Leave empty for an automatic customized avatar"
+          required
+          aria-required="true"
           error={errors.photoURL?.message}
-          {...register("photoURL")}
+          {...register("photoURL", {
+            required: "Profile photo URL is required",
+            validate: (value) => {
+              const trimmed = value?.trim();
+              if (!trimmed) return "Profile photo URL is required";
+              if (!/^https?:\/\/.+/i.test(trimmed)) {
+                return "Profile photo URL must be a valid link starting with http:// or https://";
+              }
+              try {
+                const u = new URL(trimmed);
+                return (
+                  u.protocol === "http:" ||
+                  u.protocol === "https:" ||
+                  "Profile photo URL must be a valid link starting with http:// or https://"
+                );
+              } catch {
+                return "Profile photo URL must be a valid link starting with http:// or https://";
+              }
+            },
+          })}
         />
 
         <div>
