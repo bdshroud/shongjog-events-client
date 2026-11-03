@@ -8,6 +8,10 @@ import { api } from "@/lib/axios";
 import { EventCard } from "@/components/events/EventCard";
 import { CardSkeletonGrid } from "@/components/ui/EventSkeleton";
 
+/**
+ * Recent Events Section
+ * Fetches and presents the 6 most imminent future community initiatives on the home page.
+ */
 export function RecentEventsSection() {
   const [events, setEvents] = React.useState<IEvent[]>([]);
   const [isLoading, setIsLoading] = React.useState(true);
