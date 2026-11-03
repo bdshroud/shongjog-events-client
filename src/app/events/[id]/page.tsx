@@ -25,6 +25,10 @@ import { formatDate } from "@/lib/utils";
 import { toast } from "sonner";
 import Swal from "sweetalert2";
 
+/**
+ * Event Details & Volunteer Registration View
+ * Comprehensive view with meeting guidelines, creator contact, and one-click join action.
+ */
 export default function EventDetailsPage() {
   const params = useParams();
   const id = params?.id as string;
