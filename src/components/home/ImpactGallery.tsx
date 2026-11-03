@@ -62,6 +62,10 @@ const galleryPhotos: GalleryBlock[] = [
   },
 ];
 
+/**
+ * Community Impact Gallery
+ * Mosaic photo grid highlighting verified grassroots initiatives across Bangladesh.
+ */
 export function ImpactGallery() {
   return (
     <section className="py-20 bg-white dark:bg-[#0D0818] border-b border-slate-200 dark:border-purple-900/30">
