@@ -6,6 +6,10 @@ interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
   shape?: "pill" | "leaf";
 }
 
+/**
+ * Category Badge Component
+ * Dynamically assigns contrasting color themes based on the event classification.
+ */
 export function Badge({
   category = "",
   shape = "pill",
