@@ -9,6 +9,10 @@ export interface ButtonProps
   isLoading?: boolean;
 }
 
+/**
+ * Reusable Button Component
+ * Pill-shaped action component supporting primary, secondary, outline, and loading states.
+ */
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
