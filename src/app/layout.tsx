@@ -31,7 +31,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning className={cn("font-sans", geist.variable)}>
-      <body className="antialiased min-h-screen flex flex-col bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors">
+      <body className="antialiased min-h-screen flex flex-col bg-background text-foreground transition-colors selection:bg-[#B845EC] selection:text-white">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

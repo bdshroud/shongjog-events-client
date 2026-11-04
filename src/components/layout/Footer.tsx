@@ -9,20 +9,20 @@ import {
 
 export function Footer() {
   return (
-    <footer className="w-full bg-[#08050E] text-slate-300 border-t border-purple-900/30 relative">
+    <footer className="w-full bg-slate-50 dark:bg-[#08050E] text-slate-600 dark:text-slate-300 border-t border-slate-200 dark:border-purple-900/30 relative transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top Field Offices & Hotline Strip */}
-        <div className="py-10 border-b border-purple-900/20 grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+        <div className="py-10 border-b border-slate-200 dark:border-purple-900/20 grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
           {/* Location */}
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-2xl bg-[#140E24] border border-purple-500/20 flex items-center justify-center shrink-0">
-              <MapPin className="w-6 h-6 text-[#C04BF2]" />
+            <div className="w-12 h-12 rounded-2xl bg-white dark:bg-[#140E24] border border-slate-200 dark:border-purple-500/20 flex items-center justify-center shrink-0 shadow-xs">
+              <MapPin className="w-6 h-6 text-[#B845EC] dark:text-[#C04BF2]" />
             </div>
             <div>
-              <p className="text-[11px] uppercase tracking-wider font-bold text-slate-400">
+              <p className="text-[11px] uppercase tracking-wider font-bold text-slate-500 dark:text-slate-400">
                 HQ Field Offices
               </p>
-              <p className="text-sm font-bold text-white">
+              <p className="text-sm font-bold text-slate-900 dark:text-white">
                 Mirpur 10, Dhaka & Agrabad, Chattogram
               </p>
             </div>
@@ -30,14 +30,14 @@ export function Footer() {
 
           {/* Hotline */}
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-2xl bg-[#140E24] border border-purple-500/20 flex items-center justify-center shrink-0">
-              <Phone className="w-6 h-6 text-[#C04BF2]" />
+            <div className="w-12 h-12 rounded-2xl bg-white dark:bg-[#140E24] border border-slate-200 dark:border-purple-500/20 flex items-center justify-center shrink-0 shadow-xs">
+              <Phone className="w-6 h-6 text-[#B845EC] dark:text-[#C04BF2]" />
             </div>
             <div>
-              <p className="text-[11px] uppercase tracking-wider font-bold text-slate-400">
+              <p className="text-[11px] uppercase tracking-wider font-bold text-slate-500 dark:text-slate-400">
                 24/7 Community Helpline
               </p>
-              <p className="text-sm font-bold text-white">
+              <p className="text-sm font-bold text-slate-900 dark:text-white">
                 +880 1711-000000 / Dial 1090
               </p>
             </div>
@@ -45,16 +45,16 @@ export function Footer() {
 
           {/* Email */}
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-2xl bg-[#140E24] border border-purple-500/20 flex items-center justify-center shrink-0">
-              <Mail className="w-6 h-6 text-[#C04BF2]" />
+            <div className="w-12 h-12 rounded-2xl bg-white dark:bg-[#140E24] border border-slate-200 dark:border-purple-500/20 flex items-center justify-center shrink-0 shadow-xs">
+              <Mail className="w-6 h-6 text-[#B845EC] dark:text-[#C04BF2]" />
             </div>
             <div>
-              <p className="text-[11px] uppercase tracking-wider font-bold text-slate-400">
+              <p className="text-[11px] uppercase tracking-wider font-bold text-slate-500 dark:text-slate-400">
                 Volunteer Support Email
               </p>
               <a
                 href="mailto:contact@shongjogbd.org"
-                className="text-sm font-bold text-white hover:text-[#C04BF2] transition-colors"
+                className="text-sm font-bold text-slate-900 dark:text-white hover:text-[#B845EC] dark:hover:text-[#C04BF2] transition-colors"
               >
                 contact@shongjogbd.org
               </a>
@@ -67,11 +67,11 @@ export function Footer() {
           {/* Brand & Mission */}
           <div className="space-y-4">
             <Link href="/" className="inline-block py-1">
-              <span className="font-['Playball',cursive] text-3xl font-normal text-[#C04BF2] tracking-wide filter drop-shadow-[0_0_12px_rgba(192,75,242,0.45)]">
+              <span className="font-['Playball',cursive] text-3xl font-normal text-[#B845EC] dark:text-[#C04BF2] tracking-wide filter drop-shadow-[0_0_12px_rgba(192,75,242,0.35)]">
                 Shongjog
               </span>
             </Link>
-            <p className="text-sm text-slate-400 leading-relaxed">
+            <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
               Bangladesh&apos;s grassroots social development network. We mobilize
               civic volunteers for winter clothes distributions, urban tree
               plantations, beach cleanups, and community health camps across
@@ -85,7 +85,7 @@ export function Footer() {
                 href="https://x.com"
                 target="_blank"
                 rel="noreferrer"
-                className="w-10 h-10 rounded-full bg-[#140E24] border border-purple-900/30 hover:border-[#B845EC] hover:bg-[#B845EC] text-slate-300 hover:text-white flex items-center justify-center transition-all shadow-sm"
+                className="w-10 h-10 rounded-full bg-white dark:bg-[#140E24] border border-slate-200 dark:border-purple-900/30 hover:border-[#B845EC] hover:bg-[#B845EC] text-slate-600 dark:text-slate-300 hover:text-white flex items-center justify-center transition-all shadow-xs"
                 aria-label="Follow Shongjog on X"
                 title="Follow us on X"
               >
@@ -103,7 +103,7 @@ export function Footer() {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noreferrer"
-                className="w-10 h-10 rounded-full bg-[#140E24] border border-purple-900/30 hover:border-[#B845EC] hover:bg-[#B845EC] text-slate-300 hover:text-white flex items-center justify-center transition-all shadow-sm"
+                className="w-10 h-10 rounded-full bg-white dark:bg-[#140E24] border border-slate-200 dark:border-purple-900/30 hover:border-[#B845EC] hover:bg-[#B845EC] text-slate-600 dark:text-slate-300 hover:text-white flex items-center justify-center transition-all shadow-xs"
                 aria-label="Facebook Page"
               >
                 <svg
@@ -120,7 +120,7 @@ export function Footer() {
                 href="https://youtube.com"
                 target="_blank"
                 rel="noreferrer"
-                className="w-10 h-10 rounded-full bg-[#140E24] border border-purple-900/30 hover:border-[#B845EC] hover:bg-[#B845EC] text-slate-300 hover:text-white flex items-center justify-center transition-all shadow-sm"
+                className="w-10 h-10 rounded-full bg-white dark:bg-[#140E24] border border-slate-200 dark:border-purple-900/30 hover:border-[#B845EC] hover:bg-[#B845EC] text-slate-600 dark:text-slate-300 hover:text-white flex items-center justify-center transition-all shadow-xs"
                 aria-label="YouTube Channel"
               >
                 <svg
@@ -136,14 +136,14 @@ export function Footer() {
 
           {/* Quick Platform Links */}
           <div className="space-y-3">
-            <p className="text-xs font-bold uppercase tracking-wider text-white">
+            <p className="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white">
               Platform Navigation
             </p>
-            <ul className="space-y-2 text-sm text-slate-400">
+            <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
               <li>
                 <Link
                   href="/"
-                  className="hover:text-[#C04BF2] transition-colors"
+                  className="hover:text-[#B845EC] dark:hover:text-[#C04BF2] transition-colors"
                 >
                   Home
                 </Link>
@@ -151,7 +151,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/upcoming-events"
-                  className="hover:text-[#C04BF2] transition-colors"
+                  className="hover:text-[#B845EC] dark:hover:text-[#C04BF2] transition-colors"
                 >
                   Upcoming Events
                 </Link>
@@ -159,7 +159,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/create-event"
-                  className="hover:text-[#C04BF2] transition-colors"
+                  className="hover:text-[#B845EC] dark:hover:text-[#C04BF2] transition-colors"
                 >
                   Launch an Event
                 </Link>
@@ -167,7 +167,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/joined-events"
-                  className="hover:text-[#C04BF2] transition-colors"
+                  className="hover:text-[#B845EC] dark:hover:text-[#C04BF2] transition-colors"
                 >
                   My Joined Initiatives
                 </Link>
@@ -175,7 +175,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/manage-events"
-                  className="hover:text-[#C04BF2] transition-colors"
+                  className="hover:text-[#B845EC] dark:hover:text-[#C04BF2] transition-colors"
                 >
                   Manage My Events
                 </Link>
@@ -185,14 +185,14 @@ export function Footer() {
 
           {/* Social Initiatives Categories */}
           <div className="space-y-3">
-            <p className="text-xs font-bold uppercase tracking-wider text-white">
+            <p className="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white">
               Event Categories
             </p>
-            <ul className="space-y-2 text-sm text-slate-400">
+            <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
               <li>
                 <Link
                   href="/upcoming-events?category=Winter+Clothes"
-                  className="hover:text-[#C04BF2] transition-colors"
+                  className="hover:text-[#B845EC] dark:hover:text-[#C04BF2] transition-colors"
                 >
                   Winter Relief & Blankets
                 </Link>
@@ -200,7 +200,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/upcoming-events?category=Plantation"
-                  className="hover:text-[#C04BF2] transition-colors"
+                  className="hover:text-[#B845EC] dark:hover:text-[#C04BF2] transition-colors"
                 >
                   Urban Tree Plantation
                 </Link>
@@ -208,7 +208,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/upcoming-events?category=Cleanup"
-                  className="hover:text-[#C04BF2] transition-colors"
+                  className="hover:text-[#B845EC] dark:hover:text-[#C04BF2] transition-colors"
                 >
                   Coastal Beach Cleanups
                 </Link>
@@ -216,7 +216,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/upcoming-events?category=Medical+Camp"
-                  className="hover:text-[#C04BF2] transition-colors"
+                  className="hover:text-[#B845EC] dark:hover:text-[#C04BF2] transition-colors"
                 >
                   Free Healthcare Camps
                 </Link>
@@ -224,7 +224,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/upcoming-events?category=Food+Drive"
-                  className="hover:text-[#C04BF2] transition-colors"
+                  className="hover:text-[#B845EC] dark:hover:text-[#C04BF2] transition-colors"
                 >
                   Community Food Drives
                 </Link>
@@ -234,14 +234,14 @@ export function Footer() {
 
           {/* Legal & Compliance */}
           <div className="space-y-3">
-            <p className="text-xs font-bold uppercase tracking-wider text-white">
+            <p className="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white">
               Governance & Trust
             </p>
-            <p className="text-xs text-slate-400 leading-relaxed">
+            <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
               Shongjog is an open civic technology initiative. All donations and
               volunteer rosters are audited transparently.
             </p>
-            <div className="pt-2 text-xs text-slate-500 space-y-1">
+            <div className="pt-2 text-xs text-slate-500 dark:text-slate-500 space-y-1">
               <p>Government Reg. No: BD-SW/2026-9812</p>
               <p>Mirpur 10, Dhaka-1216, Bangladesh</p>
             </div>
@@ -249,16 +249,16 @@ export function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="py-6 border-t border-purple-900/20 text-center text-xs text-slate-500 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="py-6 border-t border-slate-200 dark:border-purple-900/20 text-center text-xs text-slate-500 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p>&copy; {new Date().getFullYear()} Shongjog. All rights reserved.</p>
           <div className="flex items-center gap-6">
-            <span className="hover:text-[#C04BF2] cursor-pointer">
+            <span className="hover:text-[#B845EC] dark:hover:text-[#C04BF2] cursor-pointer transition-colors">
               Privacy Policy
             </span>
-            <span className="hover:text-[#C04BF2] cursor-pointer">
+            <span className="hover:text-[#B845EC] dark:hover:text-[#C04BF2] cursor-pointer transition-colors">
               Terms of Service
             </span>
-            <span className="hover:text-[#C04BF2] cursor-pointer">
+            <span className="hover:text-[#B845EC] dark:hover:text-[#C04BF2] cursor-pointer transition-colors">
               Volunteer Code of Conduct
             </span>
           </div>
