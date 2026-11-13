@@ -11,7 +11,6 @@ import {
   LogOut,
   Menu,
   X,
-  ChevronDown,
 } from "lucide-react";
 import { ThemeToggle } from "@/components/theme/ThemeToggle";
 import { authClient } from "@/lib/auth-client";
@@ -26,10 +25,7 @@ export function Navbar() {
   const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
   const [showTooltip, setShowTooltip] = React.useState(false);
-  const [selectedLang, setSelectedLang] = React.useState<"Eng" | "Bng">("Eng");
-  const [isLangOpen, setIsLangOpen] = React.useState(false);
   const dropdownRef = React.useRef<HTMLDivElement>(null);
-  const langRef = React.useRef<HTMLDivElement>(null);
 
   // Close dropdown on click outside
   React.useEffect(() => {
@@ -40,12 +36,6 @@ export function Navbar() {
       ) {
         setIsDropdownOpen(false);
       }
-      if (
-        langRef.current &&
-        !langRef.current.contains(event.target as Node)
-      ) {
-        setIsLangOpen(false);
-      }
     }
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
@@ -55,7 +45,6 @@ export function Navbar() {
   React.useEffect(() => {
     setIsDropdownOpen(false);
     setIsMobileMenuOpen(false);
-    setIsLangOpen(false);
   }, [pathname]);
 
   const handleLogout = async () => {
@@ -144,48 +133,8 @@ export function Navbar() {
           })}
         </nav>
 
-        {/* Right Action Section: Language selector (Eng ⌵), ThemeToggle, Auth */}
+        {/* Right Action Section: ThemeToggle, Auth */}
         <div className="flex items-center gap-3 sm:gap-4">
-          {/* Evenjo Language Selector 🇺🇸 Eng ⌵ */}
-          <div className="relative hidden sm:block" ref={langRef}>
-            <button
-              type="button"
-              onClick={() => setIsLangOpen((prev) => !prev)}
-              className="flex items-center gap-1.5 text-xs sm:text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-[#B845EC] dark:hover:text-white hover:bg-slate-100 dark:hover:bg-[#1A1330] px-2.5 py-1.5 rounded-lg transition-colors cursor-pointer"
-            >
-              <span className="text-base leading-none">
-                {selectedLang === "Eng" ? "🇺🇸" : "🇧🇩"}
-              </span>
-              <span>{selectedLang}</span>
-              <ChevronDown className="w-3.5 h-3.5 text-slate-400" />
-            </button>
-
-            {isLangOpen && (
-              <div className="absolute right-0 mt-2 w-28 rounded-xl bg-white dark:bg-[#130E24] border border-slate-200 dark:border-purple-900/40 shadow-xl py-1 z-50 animate-in fade-in zoom-in-95">
-                <button
-                  type="button"
-                  onClick={() => {
-                    setSelectedLang("Eng");
-                    setIsLangOpen(false);
-                  }}
-                  className="w-full flex items-center gap-2 px-3 py-1.5 text-xs text-slate-700 dark:text-slate-300 hover:bg-purple-50 dark:hover:bg-[#271B48] hover:text-[#B845EC] dark:hover:text-white text-left transition-colors cursor-pointer"
-                >
-                  <span>🇺🇸</span> English
-                </button>
-                <button
-                  type="button"
-                  onClick={() => {
-                    setSelectedLang("Bng");
-                    setIsLangOpen(false);
-                  }}
-                  className="w-full flex items-center gap-2 px-3 py-1.5 text-xs text-slate-700 dark:text-slate-300 hover:bg-purple-50 dark:hover:bg-[#271B48] hover:text-[#B845EC] dark:hover:text-white text-left transition-colors cursor-pointer"
-                >
-                  <span>🇧🇩</span> বাংলা
-                </button>
-              </div>
-            )}
-          </div>
-
           <ThemeToggle />
 
           {/* Auth State */}
